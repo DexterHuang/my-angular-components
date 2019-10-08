@@ -17,8 +17,9 @@ export class TestComponent extends ObserverComponent implements OnInit {
     // }, 1000);
   }
   onClickSave() {}
-  onClickLoad() {} 
+  onClickLoad() {}
 }
 
-const encrypted = CryptoHelper.encrypt("HELLO", "pass");
-console.log({ encrypted });
+const encrypted = CryptoHelper.encryptObject({ ppap: 1 }, "pass");
+const decrypted = CryptoHelper.decryptObject(encrypted, "pass");
+console.log({ decrypted });
