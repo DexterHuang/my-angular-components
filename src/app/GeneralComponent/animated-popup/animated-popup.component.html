@@ -1,0 +1,18 @@
+<div class="closed-container">
+  <div class="overlay" #overlay (click)="onClickOverlay($event)"></div>
+  <div class="hidden-content">
+    <ng-template *ngTemplateOutlet="topTemplate">
+    </ng-template>
+  </div>
+  <div class="popup-container {{this.isOpen ? 'opened': 'closed'}}" 
+  (mousedown)="onMouseDown()" (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()"
+   (click)="open()" 
+  #container>
+    <ng-template *ngTemplateOutlet="topTemplate;context:getContext()">
+    </ng-template>
+    <div *ngIf="isOpen" class="bottom">
+      <ng-template *ngTemplateOutlet="bottomTemplate">
+      </ng-template>
+    </div>
+  </div>
+</div>
