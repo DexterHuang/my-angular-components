@@ -1,13 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { AppComponent } from "./app.component";
+import { TestComponent } from "./TestComponent/TestComponent";
+import { ObserverService } from "../Observer.service";
+import { AnimatedPopupComponent } from "./GeneralComponent/animated-popup/animated-popup.component";
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [AppComponent, TestComponent, AnimatedPopupComponent],
+  imports: [BrowserModule],
+  providers: [ObserverService],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
